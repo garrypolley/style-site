@@ -322,7 +322,7 @@ var supplierColorSortedTextColor = [
     "count": "1"
   }, 
   {
-    "color": "rgb(244,67,54)", 
+    "color": "rgb(244,67,54) !important", 
     "h": 4.105263157894738, 
     "s": 89.62264150943398, 
     "l": 58.43137254901961, 
@@ -588,7 +588,7 @@ var supplierColorSortedTextColor = [
     "count": "16"
   }, 
   {
-    "color": "#000", 
+    "color": "#000 !important", 
     "h": 0, 
     "s": 0.0, 
     "l": 0.0, 

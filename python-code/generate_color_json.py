@@ -227,8 +227,8 @@ def generate_data_dict(data, sort_func):
     for value in data_array:
         if i % 2 == 0:
             background_color, color_value = value.split(': ')
-            color_value = color_value.replace(';', '').split(' ')[0]
-            hsl_value = convert_to_hsl(color_value)
+            color_value = color_value.replace(';', '')
+            hsl_value = convert_to_hsl(color_value.split(' ')[0])
             data_list.append({'color': color_value, 'h': hsl_value['h'], 's': hsl_value['s'], 'l': hsl_value['l']})
         else:
             data_list[index]['count'] = value

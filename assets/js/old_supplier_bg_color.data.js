@@ -301,7 +301,7 @@ var oldSupplierBgColor = [
     "count": "2"
   }, 
   {
-    "color": "#ccc", 
+    "color": "#ccc \\9", 
     "h": 0, 
     "s": 0.0, 
     "l": 4.705882352941177, 
@@ -406,7 +406,7 @@ var oldSupplierBgColor = [
     "count": "2"
   }, 
   {
-    "color": "#000", 
+    "color": "#000 \\9", 
     "h": 0, 
     "s": 0.0, 
     "l": 0.0, 
@@ -483,7 +483,7 @@ var oldSupplierBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#080808", 
+    "color": "#080808 \\9", 
     "h": 0, 
     "s": 0.0, 
     "l": 3.1372549019607843, 
@@ -553,7 +553,7 @@ var oldSupplierBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#1ca22c", 
+    "color": "#1ca22c \\9", 
     "h": 127.16417910447761, 
     "s": 70.52631578947367, 
     "l": 37.254901960784316, 
@@ -574,7 +574,7 @@ var oldSupplierBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#24748c", 
+    "color": "#24748c \\9", 
     "h": 193.84615384615384, 
     "s": 59.09090909090909, 
     "l": 34.509803921568626, 
@@ -679,7 +679,7 @@ var oldSupplierBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#408140", 
+    "color": "#408140 \\9", 
     "h": 120.0, 
     "s": 33.67875647668394, 
     "l": 37.84313725490196, 
@@ -826,7 +826,7 @@ var oldSupplierBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#942a25", 
+    "color": "#942a25 \\9", 
     "h": 2.702702702702701, 
     "s": 60.0, 
     "l": 36.274509803921575, 
@@ -917,7 +917,7 @@ var oldSupplierBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#c67605", 
+    "color": "#c67605 \\9", 
     "h": 35.12953367875648, 
     "s": 95.07389162561576, 
     "l": 39.80392156862745, 
@@ -1050,7 +1050,7 @@ var oldSupplierBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#e3e3e3", 
+    "color": "#e3e3e3 !important", 
     "h": 0, 
     "s": 0.0, 
     "l": 89.01960784313725, 
@@ -1211,7 +1211,7 @@ var oldSupplierBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#f9f9f7", 
+    "color": "#f9f9f7 !important", 
     "h": 60.0, 
     "s": 14.285714285714226, 
     "l": 97.25490196078431, 
@@ -1281,7 +1281,7 @@ var oldSupplierBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#fff", 
+    "color": "#fff !important", 
     "h": 0, 
     "s": 0.0, 
     "l": 5.88235294117647, 

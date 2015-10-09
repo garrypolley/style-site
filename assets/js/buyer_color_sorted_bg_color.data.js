@@ -721,7 +721,7 @@ var buyerColorSortedBgColor = [
     "count": "9"
   }, 
   {
-    "color": "#fff", 
+    "color": "#fff !important", 
     "h": 0, 
     "s": 0.0, 
     "l": 5.88235294117647, 
@@ -763,7 +763,7 @@ var buyerColorSortedBgColor = [
     "count": "6"
   }, 
   {
-    "color": "#000", 
+    "color": "#000 \\9", 
     "h": 0, 
     "s": 0.0, 
     "l": 0.0, 
@@ -889,7 +889,7 @@ var buyerColorSortedBgColor = [
     "count": "8"
   }, 
   {
-    "color": "transparent", 
+    "color": "transparent !important", 
     "h": 0, 
     "s": 0, 
     "l": 0, 

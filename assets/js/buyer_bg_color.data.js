@@ -658,7 +658,7 @@ var buyerBgColor = [
     "count": "2"
   }, 
   {
-    "color": "#000", 
+    "color": "#000 \\9", 
     "h": 0, 
     "s": 0.0, 
     "l": 0.0, 
@@ -763,7 +763,7 @@ var buyerBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#fff", 
+    "color": "#fff !important", 
     "h": 0, 
     "s": 0.0, 
     "l": 5.88235294117647, 
@@ -896,7 +896,7 @@ var buyerBgColor = [
     "count": "1"
   }, 
   {
-    "color": "transparent", 
+    "color": "transparent !important", 
     "h": 0, 
     "s": 0, 
     "l": 0, 

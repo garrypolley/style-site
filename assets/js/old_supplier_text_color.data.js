@@ -273,7 +273,7 @@ var oldSupplierTextColor = [
     "count": "2"
   }, 
   {
-    "color": "#555", 
+    "color": "#555 !important", 
     "h": 0, 
     "s": 0.0, 
     "l": 1.9607843137254901, 
@@ -329,7 +329,7 @@ var oldSupplierTextColor = [
     "count": "2"
   }, 
   {
-    "color": "#000", 
+    "color": "#000 !important", 
     "h": 0, 
     "s": 0.0, 
     "l": 0.0, 
@@ -406,7 +406,7 @@ var oldSupplierTextColor = [
     "count": "1"
   }, 
   {
-    "color": "#111", 
+    "color": "#111 !important", 
     "h": 0, 
     "s": 0.0, 
     "l": 0.39215686274509803, 
@@ -455,7 +455,7 @@ var oldSupplierTextColor = [
     "count": "1"
   }, 
   {
-    "color": "#1aa325", 
+    "color": "#1aa325 !important", 
     "h": 124.81751824817519, 
     "s": 72.4867724867725, 
     "l": 37.05882352941176, 
@@ -623,7 +623,7 @@ var oldSupplierTextColor = [
     "count": "1"
   }, 
   {
-    "color": "#999", 
+    "color": "#999 !important", 
     "h": 0, 
     "s": 0.0, 
     "l": 3.5294117647058822, 
@@ -644,7 +644,7 @@ var oldSupplierTextColor = [
     "count": "1"
   }, 
   {
-    "color": "#a3cf00", 
+    "color": "#a3cf00 !important", 
     "h": 72.7536231884058, 
     "s": 100.0, 
     "l": 40.588235294117645, 
@@ -714,7 +714,7 @@ var oldSupplierTextColor = [
     "count": "1"
   }, 
   {
-    "color": "#cf0000", 
+    "color": "#cf0000 !important", 
     "h": 0.0, 
     "s": 100.0, 
     "l": 40.588235294117645, 

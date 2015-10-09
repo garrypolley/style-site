@@ -322,7 +322,7 @@ var supplierTextColor = [
     "count": "4"
   }, 
   {
-    "color": "rgb(244,67,54)", 
+    "color": "rgb(244,67,54) !important", 
     "h": 4.105263157894738, 
     "s": 89.62264150943398, 
     "l": 58.43137254901961, 
@@ -511,7 +511,7 @@ var supplierTextColor = [
     "count": "2"
   }, 
   {
-    "color": "#000", 
+    "color": "#000 !important", 
     "h": 0, 
     "s": 0.0, 
     "l": 0.0, 

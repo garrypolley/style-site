@@ -49,7 +49,7 @@ var adminColorSortedBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#2e3344", 
+    "color": "#2e3344 !important", 
     "h": 226.36363636363635, 
     "s": 19.29824561403509, 
     "l": 22.352941176470587, 
@@ -98,7 +98,7 @@ var adminColorSortedBgColor = [
     "count": "2"
   }, 
   {
-    "color": "#131e26", 
+    "color": "#131e26 !important", 
     "h": 205.26315789473685, 
     "s": 33.333333333333336, 
     "l": 11.176470588235293, 
@@ -217,7 +217,7 @@ var adminColorSortedBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#378285", 
+    "color": "#378285 !important", 
     "h": 182.30769230769232, 
     "s": 41.48936170212766, 
     "l": 36.86274509803922, 
@@ -287,7 +287,7 @@ var adminColorSortedBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#49b249", 
+    "color": "#49b249 !important", 
     "h": 120.0, 
     "s": 41.832669322709165, 
     "l": 49.2156862745098, 
@@ -392,7 +392,7 @@ var adminColorSortedBgColor = [
     "count": "4"
   }, 
   {
-    "color": "#6ba72f", 
+    "color": "#6ba72f !important", 
     "h": 90.0, 
     "s": 56.074766355140184, 
     "l": 41.96078431372549, 
@@ -455,21 +455,21 @@ var adminColorSortedBgColor = [
     "count": "3"
   }, 
   {
-    "color": "#ff0", 
+    "color": "#ff0 !important", 
     "h": 60.0, 
     "s": 99.99999999999997, 
     "l": 2.941176470588235, 
     "count": "1"
   }, 
   {
-    "color": "#fffecc", 
+    "color": "#fffecc !important", 
     "h": 58.82352941176471, 
     "s": 100.0, 
     "l": 90.0, 
     "count": "1"
   }, 
   {
-    "color": "#fffc80", 
+    "color": "#fffc80 !important", 
     "h": 58.58267716535433, 
     "s": 100.0, 
     "l": 75.09803921568627, 
@@ -525,7 +525,7 @@ var adminColorSortedBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#f1a334", 
+    "color": "#f1a334 !important", 
     "h": 35.238095238095234, 
     "s": 87.09677419354838, 
     "l": 57.45098039215686, 
@@ -574,7 +574,7 @@ var adminColorSortedBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#fce2d6", 
+    "color": "#fce2d6 !important", 
     "h": 18.94736842105261, 
     "s": 86.36363636363646, 
     "l": 91.37254901960785, 
@@ -595,7 +595,7 @@ var adminColorSortedBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#d73c37", 
+    "color": "#d73c37 !important", 
     "h": 1.8749999999999987, 
     "s": 66.66666666666666, 
     "l": 52.94117647058824, 
@@ -630,7 +630,7 @@ var adminColorSortedBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#d9534f", 
+    "color": "#d9534f !important", 
     "h": 1.7391304347826086, 
     "s": 64.4859813084112, 
     "l": 58.0392156862745, 
@@ -784,7 +784,7 @@ var adminColorSortedBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#fff", 
+    "color": "#fff !important", 
     "h": 0, 
     "s": 0.0, 
     "l": 5.88235294117647, 
@@ -854,7 +854,7 @@ var adminColorSortedBgColor = [
     "count": "1"
   }, 
   {
-    "color": "#000", 
+    "color": "#000 \\9", 
     "h": 0, 
     "s": 0.0, 
     "l": 0.0, 

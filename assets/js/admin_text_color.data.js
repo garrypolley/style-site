@@ -105,7 +105,7 @@ var adminTextColor = [
     "count": "6"
   }, 
   {
-    "color": "#fff", 
+    "color": "#fff !important", 
     "h": 0, 
     "s": 0.0, 
     "l": 5.88235294117647, 
@@ -322,7 +322,7 @@ var adminTextColor = [
     "count": "2"
   }, 
   {
-    "color": "#000", 
+    "color": "#000 !important", 
     "h": 0, 
     "s": 0.0, 
     "l": 0.0, 
@@ -413,7 +413,7 @@ var adminTextColor = [
     "count": "1"
   }, 
   {
-    "color": "#507b9b", 
+    "color": "#507b9b !important", 
     "h": 205.6, 
     "s": 31.914893617021274, 
     "l": 46.07843137254902, 
@@ -462,7 +462,7 @@ var adminTextColor = [
     "count": "1"
   }, 
   {
-    "color": "#8088a4", 
+    "color": "#8088a4 !important", 
     "h": 226.66666666666666, 
     "s": 16.51376146788991, 
     "l": 57.25490196078431, 
@@ -504,14 +504,14 @@ var adminTextColor = [
     "count": "1"
   }, 
   {
-    "color": "#98a6ad", 
+    "color": "#98a6ad !important", 
     "h": 200.0, 
     "s": 11.351351351351356, 
     "l": 63.725490196078425, 
     "count": "1"
   }, 
   {
-    "color": "#9bd1d3", 
+    "color": "#9bd1d3 !important", 
     "h": 182.14285714285714, 
     "s": 38.88888888888887, 
     "l": 71.76470588235293, 
@@ -553,7 +553,7 @@ var adminTextColor = [
     "count": "1"
   }, 
   {
-    "color": "#bfd1de", 
+    "color": "#bfd1de !important", 
     "h": 205.16129032258067, 
     "s": 31.958762886597942, 
     "l": 80.98039215686275, 
@@ -567,7 +567,7 @@ var adminTextColor = [
     "count": "1"
   }, 
   {
-    "color": "#c5e4a5", 
+    "color": "#c5e4a5 !important", 
     "h": 89.52380952380952, 
     "s": 53.846153846153854, 
     "l": 77.05882352941177, 
@@ -588,7 +588,7 @@ var adminTextColor = [
     "count": "1"
   }, 
   {
-    "color": "#c7e6c7", 
+    "color": "#c7e6c7 !important", 
     "h": 120.0, 
     "s": 38.27160493827161, 
     "l": 84.11764705882354, 
@@ -623,14 +623,14 @@ var adminTextColor = [
     "count": "1"
   }, 
   {
-    "color": "#e6e6e6", 
+    "color": "#e6e6e6 !important", 
     "h": 0, 
     "s": 0.0, 
     "l": 90.19607843137256, 
     "count": "1"
   }, 
   {
-    "color": "#e8e9ef", 
+    "color": "#e8e9ef !important", 
     "h": 231.42857142857144, 
     "s": 17.948717948717967, 
     "l": 92.3529411764706, 
@@ -665,7 +665,7 @@ var adminTextColor = [
     "count": "1"
   }, 
   {
-    "color": "#f4cecd", 
+    "color": "#f4cecd !important", 
     "h": 1.5384615384615328, 
     "s": 63.93442622950819, 
     "l": 88.0392156862745, 

@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Style Site</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="assets/css/app.css">
+        <style>
+        body {
+            background-color: white;
+        }
+        .red {
+            background-color: red;
+        }
+        .green {
+            background-color: green;
+        }
+        .black {
+            background-color: black;
+        }
+        .white {
+            background-color: white;
+        }
+        div {
+            min-height: 30px;
+        }
+        </style>
+    </head>
+    <body class="row">
+
+        <aside class="column column-md-9">
+            <nav>
+                <ul>
+                    <li><a href="typography.html">typography</a></li>
+                    <li><a href="colors.html">colors</a></li>
+                </ul>
+            </nav>
+            <div style="position: fixed">
+                <div class="column column-md-24">
+                    <div id="exampleTextStyles"></div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="column column-md-14">
+            <h1>Typography Stats</h1>
+
+            <section class="column column-md-24 stat-region">
+                <div class="row">
+                    <article class="column column-md-12">
+                        <h1>Buyer Background Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="buyerBg">
+
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="column column-md-12">
+                        <h1>Buyer Text Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="buyerText">
+
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+
+                <div class="row">
+                    <article class="column column-md-12">
+                        <h1>Buyer Background Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="buyerBgColor">
+
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="column column-md-12">
+                        <h1>Buyer Text Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="buyerTextColor">
+
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+            </section>
+
+            <section id="admin" class="column column-md-24 stat-region">
+                <div class="row">
+                    <article class="column column-md-12">
+                        <h1>Admin Background Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="adminBg">
+
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="column column-md-12">
+                        <h1>Admin Text Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="adminText">
+
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+
+                <div class="row">
+                    <article class="column column-md-12">
+                        <h1>Admin Background Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="adminBgColor">
+
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="column column-md-12">
+                        <h1>Admin Text Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="adminTextColor">
+
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+            </section>
+
+            <section id="oldSupplier" class="column column-md-24 stat-region">
+                <div class="row">
+                    <article class="column column-md-12">
+                        <h1>Old Supplier Background Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="oldSupplierBg">
+
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="column column-md-12">
+                        <h1>Old Supplier Text Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="oldSupplierText">
+
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+
+                <div class="row">
+                    <article class="column column-md-12">
+                        <h1>Old Supplier Background Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="oldSupplierBgColor">
+
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="column column-md-12">
+                        <h1>Old Supplier Text Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="oldSupplierTextColor">
+
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+            </section>
+
+            <section id="supplier" class="column column-md-24 stat-region">
+                <div class="row">
+                    <article class="column column-md-12">
+                        <h1>Supplier Background Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="supplierBg">
+
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="column column-md-12">
+                        <h1>Supplier Text Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="supplierText">
+
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+
+                <div class="row">
+                    <article class="column column-md-12">
+                        <h1>Supplier Background Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="supplierBgColor">
+
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="column column-md-12">
+                        <h1>Supplier Text Colors</h1>
+                        <table>
+                            <thead>
+                                <th>Color</th>
+                                <th>Count</th>
+                            </thead>
+                            <tbody id="supplierTextColor">
+
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <script src="assets/js/buyer_bg_color.data.js"></script>
+        <script src="assets/js/buyer_text_color.data.js"></script>
+        <script src="assets/js/admin_bg_color.data.js"></script>
+        <script src="assets/js/admin_text_color.data.js"></script>
+        <script src="assets/js/old_supplier_bg_color.data.js"></script>
+        <script src="assets/js/old_supplier_text_color.data.js"></script>
+        <script src="assets/js/supplier_bg_color.data.js"></script>
+        <script src="assets/js/supplier_text_color.data.js"></script>
+
+        <script src="assets/js/buyer_color_sorted_bg_color.data.js"></script>
+        <script src="assets/js/buyer_color_sorted_text_color.data.js"></script>
+        <script src="assets/js/admin_color_sorted_bg_color.data.js"></script>
+        <script src="assets/js/admin_color_sorted_text_color.data.js"></script>
+        <script src="assets/js/old_supplier_color_sorted_bg_color.data.js"></script>
+        <script src="assets/js/old_supplier_color_sorted_text_color.data.js"></script>
+        <script src="assets/js/supplier_color_sorted_bg_color.data.js"></script>
+        <script src="assets/js/supplier_color_sorted_text_color.data.js"></script>
+
+        <script>
+            function generateBgRows(colorData, id) {
+                var i,
+                    dom = document.getElementById(id),
+                    rows = '';
+
+                for (i = 0; i < colorData.length; i++) {
+                    rows += '<tr><td><span style="background-color: ' + colorData[i].color + ';">' + colorData[i].color +'</span></td>' +
+                        '<td>' + colorData[i].count + '</td>'
+                }
+
+                dom.innerHTML = rows;
+            }
+
+            function generateColorRows(colorData, id) {
+                var i,
+                    dom = document.getElementById(id),
+                    rows = '';
+
+                for (i = 0; i < colorData.length; i++) {
+                    rows += '<tr><td><span style="color: ' + colorData[i].color + ';">' + colorData[i].color +'</span></td>' +
+                        '<td>' + colorData[i].count + '</td>'
+                }
+
+                dom.innerHTML = rows;
+            }
+
+        </script>
+
+        <script>
+            generateBgRows(buyerBgColor, 'buyerBg');
+            generateBgRows(adminBgColor, 'adminBg');
+            generateBgRows(oldSupplierBgColor, 'oldSupplierBg');
+            generateBgRows(supplierBgColor, 'supplierBg');
+
+            generateColorRows(buyerTextColor, 'buyerText');
+            generateColorRows(adminTextColor, 'adminText');
+            generateColorRows(oldSupplierTextColor, 'oldSupplierText');
+            generateColorRows(supplierTextColor, 'supplierText');
+
+            generateBgRows(buyerColorSortedBgColor, 'buyerBgColor');
+            generateBgRows(adminColorSortedBgColor, 'adminBgColor');
+            generateBgRows(oldSupplierColorSortedBgColor, 'oldSupplierBgColor');
+            generateBgRows(supplierColorSortedBgColor, 'supplierBgColor');
+
+            generateColorRows(buyerColorSortedTextColor, 'buyerTextColor');
+            generateColorRows(adminColorSortedTextColor, 'adminTextColor');
+            generateColorRows(oldSupplierColorSortedTextColor, 'oldSupplierTextColor');
+            generateColorRows(supplierColorSortedTextColor, 'supplierTextColor');
+        </script>
+    </body>
+</html>

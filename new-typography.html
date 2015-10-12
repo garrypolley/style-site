@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Style Site: New Typography</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400&subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/app.css">
+
+    <style>
+        body {
+            margin: 0 auto;
+        }
+
+        table {
+            text-align: left;
+        }
+    </style>
+</head>
+<body class="row" id="site-container">
+    <aside class="column column-md-6">
+        <nav>
+            <ul>
+                <li><a href="typography.html">existing typography stats</a></li>
+                <li><a href="colors.html">existing color stats</a></li>
+                <li><a href="new-typography.html">proposed typography</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="column column-md-18">
+        <h1 class="heading heading--large">Typography</h1>
+
+        <p>
+            This page contains examples of the various typographical styles defined
+            with this UI guide.
+        </p>
+
+        <h2 class="heading">Examples</h2>
+
+        <p>
+            Below you will see examples of various headings and the CSS needed
+            to achieve each style. The size of the headings changes once you drop
+            below the medium viewport width. This is on purpose to take up less
+            space on smaller devices and make body text easier to read and
+            standout more.
+        </p>
+
+        <table>
+            <caption>Examples of headings.</caption>
+            <thead>
+                <tr>
+                    <th><h2 class="heading heading--small">Rendered Example</h2></th>
+                    <th><h2 class="heading heading--small">HTML and CSS</h2></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><h3 class="heading heading--large">Large Heading</h3></td>
+                    <td>
+                        <code>
+                            <pre>&lt;h3 class=&quot;heading heading--large&quot;&gt;Large Heading&lt;/h3&gt;</pre>
+                        </code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><h3 class="heading">Standard Heading</h3></td>
+                    <td>
+                        <code>
+                            <pre>&lt;h3 class=&quot;heading&quot;&gt;Standard Heading&lt;/h3&gt;</pre>
+                        </code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><h3 class="heading heading--small">Small Heading</h3></td>
+                    <td>
+                        <code>
+                            <pre>&lt;h3 class=&quot;heading heading--small&quot;&gt;Small Heading&lt;/h3&gt;</pre>
+                        </code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><h3 class="heading heading--extra-small">Extra Small Heading</h3></td>
+                    <td>
+                        <code>
+                            <pre>&lt;h3 class=&quot;heading heading--extra-small&quot;&gt;Extra Small Heading&lt;/h3&gt;</pre>
+                        </code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Not a heading</td>
+                    <td>This is just standard text so you can see how it compares.</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

@@ -38,7 +38,7 @@
             This page contains the current colors supported.
         </p>
 
-        <table>
+        <table id="colors-table">
             <caption>Colors Table</caption>
 
             <thead>
@@ -95,11 +95,10 @@
             within a given LESS declaration. For example:
         </p>
 
-        <pre>html {
+        <pre class="text-color--inverse background-color--inverse">html {
     &:extend(.text-color); /* [1] */
     &:extend(.background-color); /* [1] */
-}
-        </pre>
+}</pre>
 
         <p>
             See all the mixins <a href="https://github.com/garrypolley/style-site/blob/master/assets/less/colors.less">here</a>. The general form is:
@@ -108,7 +107,7 @@
     </main>
 
     <script>
-        var elements = document.querySelectorAll('[class^=text-color]'),
+        var elements = document.querySelectorAll('#colors-table [class^=text-color]'),
             i, computed, values, color, rgbValues;
 
         for (i = 0; i < elements.length; i++) {

@@ -558,8 +558,6 @@
     Note: Values for `font-size` and `line-height` are gathered from the link
     below with sensible rounded out values.
 
-    Example fonts: http://goo.gl/T6GMZJ
-
 \* ------------------------------------------------------------------------- */
 .heading {
   font-size: bold;
@@ -591,7 +589,7 @@
     * http://www.smashingmagazine.com/2014/09/balancing-line-length-font-size-responsive-web-design/
     * https://css-tricks.com/rems-ems/
     * https://j.eremy.net/confused-about-rem-and-em/
-    * http://type-scale.com/?size=18&scale=1.250&text=A%20Visual%20Type%20Scale&webfont=Open%20Sans&font-family=%27Open%20Sans%27&font-weight=100&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=#333 -- example look of fonts
+    * http://goo.gl/T6GMZJ -- example look of fonts
 
     1. This is the base font size. All other font sizes will be relative to
         this size. This allows for better scaling and easier to read pages.
@@ -602,7 +600,9 @@
         line-height because they have smaller text.
         Note: `rem` is used to keep _all_ line-height consistent across the
             site.
-    3. Whenever the site is viewed on anything smaller than a medium sized
+    3. Prevent iOS and IE text size adjust after device orientation change,
+        without disabling user zoom. See normalize.css
+    4. Whenever the site is viewed on anything smaller than a medium sized
         screen we should increase the base font size and decrease the
         header sizes. This allows for a better viewing and reading
         experience for users.
@@ -614,9 +614,13 @@ html {
   font-family: 'Open Sans', Helvetica, 'Helvetica Neue', sans-serif;
   line-height: 1.45rem;
   /* [2] */
+  -webkit-text-size-adjust: 100%;
+  /* [3] */
+  -ms-text-size-adjust: 100%;
+  /* [3] */
 }
 @media only screen and (max-width: 992px) {
-  /* [3] */
+  /* [4] */
   html {
     font-size: 1.1rem;
     line-height: 1.6rem;
@@ -638,6 +642,75 @@ html {
     font-size: 1.2rem;
     line-height: 1.7rem;
   }
+}
+/* ------------------------------------------------------------------------- *\
+    Colors to be used throughout. No colors should exist outside this file.
+
+    1. BaseColors      ... These are for _all_ pages e.g. <p> text color
+    2. StatusColors    ... Colors for showing the status
+    3. ThemeColors     ... Colors for specialized content
+    4. ColorMixins     ... Mixins for using colors (consuming colors)
+    5. ColorAssignment ... _Only_ place where colors are actually assigned
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    #BaseColors
+
+    These colors are the basis of all applications. These values should be
+    fairly standard and not changed often.
+
+    1. Using an 'off-black' to limit the harsh contrast of a true #fff on #000
+
+\* ------------------------------------------------------------------------- */
+/* [1] */
+/* ------------------------------------------------------------------------- *\
+    #StatusColors
+
+    These colors should be used to indicate how something is doing. For
+    example you may use some of these colors to show that something is
+    activated or successful.
+
+    The intent of these colors is to be used as variables within a mixin via
+    using :extend(.color-mixin) that way we have less CSS rules created.
+    The selector count will be the same eitherway. Since we are using a
+    preprocessor we'll be able to read what the intent as well as produce
+    better CSS.
+
+    Example Usage:
+
+        .color-background--success {
+            background-color: @color-success;
+        }
+
+        .panel__heading--success {
+            &.extend(.color-background--success);
+        }
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    #ThemeColors
+
+    These colors are here for specific styles. These colors should be used
+    for most things like buttons, disabled inputs, and other parts of the
+    site that need common colors that do not necessarily convey meaning
+    on their own like the StatusColors above.
+
+    1. It is a coincidence that success and brand are the same values.
+        These should not be set to each other, but independently set.
+
+\* ------------------------------------------------------------------------- */
+/* [1] */
+/* ------------------------------------------------------------------------- *\
+    #ColorAssignment
+
+    This is the actual assignment of the default colors for the application.
+    Colors should only be assigned to specific classes and elements directly
+    within this code section.
+
+\* ------------------------------------------------------------------------- */
+html {
+  color: #333333;
+  background-color: #f2f2f2;
 }
 /* ------------------------------------------------------------------------- *\
     #SiteContainer

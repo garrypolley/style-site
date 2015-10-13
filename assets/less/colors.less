@@ -1,0 +1,100 @@
+/* ------------------------------------------------------------------------- *\
+    Colors to be used throughout. No colors should exist outside this file.
+
+    1. BaseColors      ... These are for _all_ pages e.g. <p> text color
+    2. StatusColors    ... Colors for showing the status
+    3. ThemeColors     ... Colors for specialized content
+    4. ColorMixins     ... Mixins for using colors (consuming colors)
+    5. ColorAssignment ... _Only_ place where colors are actually assigned
+
+\* ------------------------------------------------------------------------- */
+
+
+
+
+
+/* ------------------------------------------------------------------------- *\
+    #BaseColors
+
+    These colors are the basis of all applications. These values should be
+    fairly standard and not changed often. Ideally these values are used
+    far less frequently than the better named and more semantic StatusColors
+    and ThemColors.
+
+    1. Using an 'off-black' to limit the harsh contrast of a true #fff on #000
+
+\* ------------------------------------------------------------------------- */
+@color-black: #333333; /* [1] */
+@color-white: #000000;
+@color-gray:  #f2f2f2;
+
+
+
+
+
+/* ------------------------------------------------------------------------- *\
+    #StatusColors
+
+    These colors should be used to indicate how something is doing. For
+    example you may use some of these colors to show that something is
+    activated or successful.
+
+    The intent of these colors is to be used as variables within a mixin via
+    using :extend(.color-mixin) that way we have less CSS rules created.
+    The selector count will be the same eitherway. Since we are using a
+    preprocessor we'll be able to read what the intent as well as produce
+    better CSS.
+
+    Example Usage:
+
+        .color-background--success {
+            background-color: @color-success;
+        }
+
+        .panel__heading--success {
+            &.extend(.color-background--success);
+        }
+
+\* ------------------------------------------------------------------------- */
+@color-success:   #64b245;
+@color-warning:   #faa419;
+@color-info:      #169cd9;
+@color-critical:  #e57373;
+
+
+
+
+
+/* ------------------------------------------------------------------------- *\
+    #ThemeColors
+
+    These colors are here for specific styles. These colors should be used
+    for most things like buttons, disabled inputs, and other parts of the
+    site that need common colors that do not necessarily convey meaning
+    on their own like the StatusColors above.
+
+    1. It is a coincidence that success and brand are the same values.
+        These should not be set to each other, but independently set.
+
+\* ------------------------------------------------------------------------- */
+
+@color-primary:   #64B245; /* [1] */
+@color-secondary: #0099cc;
+@color-border:    #eeeeee;
+
+
+
+
+
+/* ------------------------------------------------------------------------- *\
+    #ColorAssignment
+
+    This is the actual assignment of the default colors for the application.
+    Colors should only be assigned to specific classes and elements directly
+    within this code section.
+
+\* ------------------------------------------------------------------------- */
+html {
+    color: @color-black;
+    background-color: @color-gray;
+}

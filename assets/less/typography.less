@@ -47,8 +47,6 @@
     Note: Values for `font-size` and `line-height` are gathered from the link
     below with sensible rounded out values.
 
-    Example fonts: http://goo.gl/T6GMZJ
-
 \* ------------------------------------------------------------------------- */
 .heading {
     font-size: bold;
@@ -88,7 +86,7 @@
     * http://www.smashingmagazine.com/2014/09/balancing-line-length-font-size-responsive-web-design/
     * https://css-tricks.com/rems-ems/
     * https://j.eremy.net/confused-about-rem-and-em/
-    * http://type-scale.com/?size=18&scale=1.250&text=A%20Visual%20Type%20Scale&webfont=Open%20Sans&font-family=%27Open%20Sans%27&font-weight=100&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=#333 -- example look of fonts
+    * http://goo.gl/T6GMZJ -- example look of fonts
 
     1. This is the base font size. All other font sizes will be relative to
         this size. This allows for better scaling and easier to read pages.
@@ -99,7 +97,9 @@
         line-height because they have smaller text.
         Note: `rem` is used to keep _all_ line-height consistent across the
             site.
-    3. Whenever the site is viewed on anything smaller than a medium sized
+    3. Prevent iOS and IE text size adjust after device orientation change,
+        without disabling user zoom. See normalize.css
+    4. Whenever the site is viewed on anything smaller than a medium sized
         screen we should increase the base font size and decrease the
         header sizes. This allows for a better viewing and reading
         experience for users.
@@ -109,9 +109,12 @@ html {
     font-size: 18px; /* [1] */
     font-family: 'Open Sans', Helvetica, 'Helvetica Neue', sans-serif;
     line-height: 1.45rem; /* [2] */
+    -webkit-text-size-adjust: 100%; /* [3] */
+        -ms-text-size-adjust: 100%; /* [3] */
+
 }
 
-@media only screen and (max-width: @screen-md-min) { /* [3] */
+@media only screen and (max-width: @screen-md-min) { /* [4] */
     html {
         font-size: 1.1rem;
         line-height: 1.6rem;

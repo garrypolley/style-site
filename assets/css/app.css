@@ -703,16 +703,89 @@ html {
 \* ------------------------------------------------------------------------- */
 /* [1] */
 /* ------------------------------------------------------------------------- *\
+    #ColorMixins
+
+    These mixins should be used by various components to get actual styles.
+    They can be used on their own as dedicated classes, however, it is
+    preferred for these to be extended in less.
+
+    Example:
+        .footer--info {
+            &:.extend(.text-color--primary);
+            &:.extend(.background-color--info);
+        }
+\* ------------------------------------------------------------------------- */
+.text-color,
+html {
+  color: #333333;
+}
+.text-color--success {
+  color: #64b245;
+}
+.text-color--warning {
+  color: #faa419;
+}
+.text-color--info {
+  color: #169cd9;
+}
+.text-color--critical {
+  color: #e57373;
+}
+.text-color--primary {
+  color: #64b245;
+}
+.text-color--secondary {
+  color: #0099cc;
+}
+.text-color--border {
+  color: #eeeeee;
+}
+.text-color--inverse {
+  color: #000000;
+}
+.background-color,
+html {
+  background-color: #f2f2f2;
+}
+.background-color--success {
+  background-color: #64b245;
+}
+.background-color--warning {
+  background-color: #faa419;
+}
+.background-color--info {
+  background-color: #169cd9;
+}
+.background-color--critical {
+  background-color: #e57373;
+}
+.background-color--primary {
+  background-color: #64b245;
+}
+.background-color--secondary {
+  background-color: #0099cc;
+}
+.background-color--border {
+  background-color: #eeeeee;
+}
+.background-color--inverse {
+  background-color: #333333;
+}
+/* ------------------------------------------------------------------------- *\
     #ColorAssignment
 
     This is the actual assignment of the default colors for the application.
     Colors should only be assigned to specific classes and elements directly
     within this code section.
 
+    1. This is a deliberate decision to make the default background for
+        all elements be this color. This is done to help avoid stark contrast
+        on pages with text.
+
 \* ------------------------------------------------------------------------- */
 html {
-  color: #333333;
-  background-color: #f2f2f2;
+  /* [1] */
+  /* [1] */
 }
 /* ------------------------------------------------------------------------- *\
     #SiteContainer

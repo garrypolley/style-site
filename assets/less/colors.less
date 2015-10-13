@@ -87,14 +87,93 @@
 
 
 /* ------------------------------------------------------------------------- *\
+    #ColorMixins
+
+    These mixins should be used by various components to get actual styles.
+    They can be used on their own as dedicated classes, however, it is
+    preferred for these to be extended in less.
+
+    Example:
+        .footer--info {
+            &:.extend(.text-color--primary);
+            &:.extend(.background-color--info);
+        }
+\* ------------------------------------------------------------------------- */
+.text-color {
+    color: @color-black;
+}
+.text-color--success {
+    color: @color-success;
+}
+.text-color--warning {
+    color: @color-warning;
+}
+.text-color--info {
+    color: @color-info;
+}
+.text-color--critical {
+    color: @color-critical;
+}
+
+.text-color--primary {
+    color: @color-primary
+}
+.text-color--secondary {
+    color: @color-secondary;
+}
+.text-color--border {
+    color: @color-border;
+}
+.text-color--inverse {
+    color: @color-white;
+}
+
+.background-color {
+    background-color: @color-gray;
+}
+.background-color--success {
+    background-color: @color-success;
+}
+.background-color--warning {
+    background-color: @color-warning;
+}
+.background-color--info {
+    background-color: @color-info;
+}
+.background-color--critical {
+    background-color: @color-critical;
+}
+
+.background-color--primary {
+    background-color: @color-primary
+}
+.background-color--secondary {
+    background-color: @color-secondary;
+}
+.background-color--border {
+    background-color: @color-border;
+}
+.background-color--inverse {
+    background-color: @color-black;
+}
+
+
+
+
+
+/* ------------------------------------------------------------------------- *\
     #ColorAssignment
 
     This is the actual assignment of the default colors for the application.
     Colors should only be assigned to specific classes and elements directly
     within this code section.
 
+    1. This is a deliberate decision to make the default background for
+        all elements be this color. This is done to help avoid stark contrast
+        on pages with text.
+
 \* ------------------------------------------------------------------------- */
 html {
-    color: @color-black;
-    background-color: @color-gray;
+    &:extend(.text-color); /* [1] */
+    &:extend(.background-color); /* [1] */
 }

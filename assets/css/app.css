@@ -657,7 +657,9 @@ html {
     #BaseColors
 
     These colors are the basis of all applications. These values should be
-    fairly standard and not changed often.
+    fairly standard and not changed often. Ideally these values are used
+    far less frequently than the better named and more semantic StatusColors
+    and ThemColors.
 
     1. Using an 'off-black' to limit the harsh contrast of a true #fff on #000
 

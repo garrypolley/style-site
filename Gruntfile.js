@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
     watch: {
       scripts: {
-        files: ['*'],
+        files: ['*/**/*.*'],
         tasks: ['less:example'],
         options: {
           spawn: false

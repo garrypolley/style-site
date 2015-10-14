@@ -113,7 +113,7 @@
         for (i = 0; i < elements.length; i++) {
             computed = window.getComputedStyle(elements[i]);
             color = computed.color;
-            rgbValues = color.replace(/rgb\(/g, '').replace(/\)/g, '').replace(/ /g, '').split(',');
+            rgbValues = color.replace(/rgb\(|\)| /g, '').split(',');
             values = rgbToHex(rgbValues[0], rgbValues[1], rgbValues[2]);
 
             elements[i].innerHTML = values;

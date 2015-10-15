@@ -18,6 +18,7 @@
 @import 'mixins/tab-focus';
 @import 'colors';
 @import 'measurements';
+@import 'mouse';
 
 
 
@@ -31,37 +32,42 @@
     https://github.com/twbs/bootstrap/blob/v3.3.5/less/mixins/buttons.less
     https://github.com/twbs/bootstrap/blob/v3.3.5/less/buttons.less
 
-    1. Reset unusual Firefox-on-Android default style; see
+    1. Since links can be styled as buttons we must remove the underline.
+    2. Reset unusual Firefox-on-Android default style; see
         https://github.com/necolas/normalize.css/issues/214
-    2. By default do not show a border, allow specific button types to
+    3. By default do not show a border, allow specific button types to
         override
-    3. Buttons with long text should not explode outside their containers.
-    4. Setting style specifically because user agent style sheets override
+    4. Buttons with long text should not explode outside their containers.
+    5. Setting style specifically because user agent style sheets override
         the value that should cascade.
-    5. Use the button-size mixin to keep implementation consistent between
+    6. Use the button-size mixin to keep implementation consistent between
         the button sizes and the default button.
+    7. No matter the size all buttons should have the same outer margin.
+    8. Keep the active button styles and the active button states in sync.
 
 \* ------------------------------------------------------------------------- */
 .button {
     display: inline-block;
     text-align: center;
+    text-decoration: none; /* [1] */
     vertical-align: middle;
 
-    background-image: none; /* [1] */
-    border: @border-width solid transparent; /* [2] */
+    background-image: none; /* [2] */
+    border: @border-width--extra-small solid @color-black; /* [3] */
     border-radius: @border-radius;
 
     touch-action: manipulation;
     cursor: pointer;
 
-    white-space: normal; /* [3] */
-    font-size: 1rem; /* [4] */
+    white-space: normal; /* [4] */
+    font-size: 1rem; /* [5] */
 
-    .button-size-mixin(1); /* [5] */
+    .button-size-mixin(@padding-small, @padding-default); /* [6] */
+    margin: @margin-extra-small @margin-small; /* [7] */
 
     &:active,
     &:focus {
-        .tab-focus();
+        .button--active; /* [8] */
     }
 
     &:hover,
@@ -88,40 +94,62 @@
     Example usage:
         <a class="button button--primary">Primary Link</a>
 
+    1. This color is tightly coupled to the color actually used
+        inside the .background-color--inverse class.
+
 \* ------------------------------------------------------------------------- */
+.button-style-mixin (@color) {
+    &:hover,
+    &:focus {
+        background-color: darken(@color, 5%);
+    }
+}
+
+.button--default {
+    background-color: @color-white;
+    .button-style-mixin(@color-white);
+}
+
 .button--primary {
     &:extend(.background-color--primary);
     &:extend(.text-color--inverse);
+    .button-style-mixin(@color-primary);
 }
 
 .button--secondary {
     &:extend(.background-color--secondary);
     &:extend(.text-color--inverse);
+    .button-style-mixin(@color-secondary);
 }
 
 .button--inverse {
     &:extend(.background-color--inverse);
     &:extend(.text-color--inverse);
+    .button-style-mixin(@color-black); /* [1] */
 }
 
 .button--success {
     &:extend(.background-color--success);
     &:extend(.text-color--inverse);
+    .button-style-mixin(@color-success);
 }
 
 .button--info {
     &:extend(.background-color--info);
     &:extend(.text-color--inverse);
+    .button-style-mixin(@color-info);
 }
 
 .button--warning {
     &:extend(.background-color--warning);
     &:extend(.text-color--inverse);
+    .button-style-mixin(@color-warning);
 }
 
 .button--critical {
     &:extend(.background-color--critical);
     &:extend(.text-color--inverse);
+    .button-style-mixin(@color-critical);
 }
 
 
@@ -142,21 +170,20 @@
     use cases for different button sizes.
 
 \* ------------------------------------------------------------------------- */
-.button-size-mixin(@size) {
-    padding: unit(@size / 2, rem) unit(@size, rem);
-    margin: unit(@size / 4, rem) unit(@size / 2, rem);
+.button-size-mixin(@vertical, @horizontal) {
+    padding: @vertical @horizontal;
 }
 
 .button--large {
-    .button-size-mixin(2);
+    .button-size-mixin(@padding-default, @padding-large);
 }
 
 .button--small {
-    .button-size-mixin(.5);
+    .button-size-mixin(@padding-extra-small, @padding-small);
 }
 
 .button--extra-small {
-    .button-size-mixin(.25);
+    .button-size-mixin(@padding-extra-small, @padding-extra-small);
 }
 
 
@@ -169,13 +196,25 @@
     These styles handle manually setting button states. If a button should
     appear to be active then use the .button--active class.
 
+    1. Deactivated button should not indicate focus.
+    2. Deactivated button should not remove border, this value is dependent
+        on the original border color in .button
+
 \* ------------------------------------------------------------------------- */
 .button--active {
     .tab-focus();
+    border-color: transparent;
 }
 
 .button--disabled {
-    cursor: not-allowed;
-    opacity: .7;
+    cursor: @cursor-disabled;
+    opacity: @opacity-disabled;
     box-shadow: none;
+
+    &:active,
+    &:focus {
+        .remove-tab-focus(); /* [1] */
+        box-shadow: none; /* [1] */
+        border-color: @color-black; /* [2] */
+    }
 }

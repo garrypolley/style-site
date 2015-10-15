@@ -233,45 +233,63 @@
             <h1 class="heading">Buttons</h1>
             <p>Below are the different kinds of buttons supported.</p>
 
-            <h2 class="heading heading--small">Default Button</h2>
-            <button class="button">I'm a button</button>
+            <h2 class="heading heading--small">Defaults</h2>
+            <button class="button button--default">I'm a button</button>
             <p>
                 As you can see the default button has no color styles
                 applied. It is expected to add a modifier class to support
                 styling a button. For example: <code>.button .button--primary</code>
             </p>
 
-            <h2 class="heading heading--small">Styled Buttons</h2>
+            <h2 class="heading heading--small">Styles</h2>
 
-            <button class="button button--primary">Primary Button</button>
-            <button class="button button--secondary">Secondary Button</button>
-            <button class="button button--critical">Critical Button</button>
-            <button class="button button--inverse">Inverse Button</button>
-            <button class="button button--success">Success Button</button>
-            <button class="button button--warning">Warning Button</button>
-            <button class="button button--info">Info Button</button>
+            <button class="button button--primary">Primary</button>
+            <button class="button button--secondary">Secondary</button>
+            <button class="button button--critical">Critical</button>
+            <button class="button button--inverse">Inverse</button>
+            <button class="button button--success">Success</button>
+            <button class="button button--warning">Warning</button>
+            <button class="button button--info">Info</button>
 
-            <h2 class="heading heading--small">Sized Buttons</h2>
+            <h2 class="heading heading--small">Sizes</h2>
 
-            <button class="button button--large">Large Button</button>
-            <button class="button button--default">Default Button</button>
-            <button class="button button--small">Small Button</button>
-            <button class="button button--extra-small">Extra Small Button</button>
+            <button class="button button--default button--large">Large</button>
+            <button class="button button--default button--default">Default</button>
+            <button class="button button--default button--small">Small</button>
+            <button class="button button--default button--extra-small">Extra Small</button>
 
-            <h2 class="heading heading--small">States for Buttons</h2>
+            <h2 class="heading heading--small">States</h2>
 
-            <button class="button button--active">Active Button</button>
-            <button class="button button--disabled">Disabled Button</button>
+            <button class="button button--default button--active">Active</button>
+            <button class="button button--default button--disabled">Disabled</button>
 
 
-            <h2 class="heading heading--small">Combined Buttons</h2>
+            <h2 class="heading heading--small">Combinations</h2>
 
-            <button class="button button--large button--primary">Large Primary Button</button>
-            <button class="button button--default button--crtical">Default Critical Button</button>
-            <button class="button button--small button--info">Small Info Button</button>
-            <button class="button button--extra-small button--inverse">Extra Small Inverse Button</button>
-            <button class="button button--large button--inverse button--disabled">Large Inverse Disabled Button</button>
-            <button class="button button--default button--critical button--disabled">Default Critical Disabled Button</button>
+            <a href="#" class="button button--large button--primary">Large Primary &lt;a&gt;</a>
+            <button class="button button--critical">Default Critical</button>
+            <button class="button button--small button--info">Small Info</button>
+            <button class="button button--extra-small button--inverse">Extra Small Inverse</button>
+            <button class="button button--large button--inverse button--disabled">Large Inverse Disabled</button>
+            <button class="button button--critical button--disabled">Default Critical Disabled</button>
+
+            <h2 class="heading heading--small">Groups</h2>
+
+            <p>Below are examples of the possible ways to group buttons</p>
+
+            <h3 class="heading heading--extra-small">Horizontal</h3>
+
+            <div class="button-group button-group--horizontal">
+                <button class="button button--info">Info</button>
+                <button class="button button--warning">Warning</button>
+                <button class="button button--critical">Critical</button>
+            </div>
+
+            <div class="button-group button-group--horizontal">
+                <button class="button button--default">one</button>
+                <button class="button button--default">two</button>
+                <button class="button button--default">three</button>
+            </div>
 
         </section>
     </main>

@@ -650,11 +650,11 @@ html {
 /* ------------------------------------------------------------------------- *\
     Colors to be used throughout. No colors should exist outside this file.
 
-    1. BaseColors      ... These are for _all_ pages e.g. <p> text color
-    2. StatusColors    ... Colors for showing the status
-    3. ThemeColors     ... Colors for specialized content
-    4. ColorMixins     ... Mixins for using colors (consuming colors)
-    5. ColorAssignment ... _Only_ place where colors are actually assigned
+    1. BaseColors       ... These are for _all_ pages e.g. <p> text color
+    2. StatusColors     ... Colors for showing the status
+    3. ThemeColors      ... Colors for specialized content
+    4. ColorClassMixins ... Mixins for using colors (consuming colors)
+    5. ColorAssignment  ... _Only_ place where colors are actually assigned
 
 \* ------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------- *\
@@ -707,7 +707,7 @@ html {
 \* ------------------------------------------------------------------------- */
 /* [1] */
 /* ------------------------------------------------------------------------- *\
-    #ColorMixins
+    #ColorClassMixins
 
     These mixins should be used by various components to get actual styles.
     They can be used on their own as dedicated classes, however, it is
@@ -838,7 +838,10 @@ html {
 /* ------------------------------------------------------------------------- *\
     Measurements to be reused by components.
 
-    1. Border ... Contains measurements for borders
+    1. Border  ... Contains measurements for borders
+    2. Padding ... Default padding sizes
+    3. Margin  ... Default margin sizes
+    4. Opacity ... Default opacity options
 
 \* ------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------- *\
@@ -846,6 +849,47 @@ html {
 
     These values should be used for the widths and rounding of borders.
     Any values needed for border "wideness" should be placed in this section.
+
+    1. Using px instead of rem because the size of the border should be the
+        same regardless of font size.
+
+\* ------------------------------------------------------------------------- */
+/* [1] */
+/* [1] */
+/* [1] */
+/* [1] */
+/* ------------------------------------------------------------------------- *\
+    #Padding
+
+    Only allowed values for the padding of elements. All values should be
+    computed using rem to keep relative sizing correct.
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    #Margin
+
+    Only allowed values for the margin of elements. All values should be
+    computed using rem to keep relative sizing correct.
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    #Opacity
+
+    Optional values to set for opacity. If an alpha value or opacity value
+    needs to be set it should be set to one of these constants.
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    Styles related to interactions with the mouse.
+
+    1. Cursors ... various states for cursors
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    #Cursors
+
+    Constants for cursors. These constants exist so it is easy to share the
+    same concept across different types of components.
 
 \* ------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------- *\
@@ -856,35 +900,41 @@ html {
     https://github.com/twbs/bootstrap/blob/v3.3.5/less/mixins/buttons.less
     https://github.com/twbs/bootstrap/blob/v3.3.5/less/buttons.less
 
-    1. Reset unusual Firefox-on-Android default style; see
+    1. Since links can be styled as buttons we must remove the underline.
+    2. Reset unusual Firefox-on-Android default style; see
         https://github.com/necolas/normalize.css/issues/214
-    2. By default do not show a border, allow specific button types to
+    3. By default do not show a border, allow specific button types to
         override
-    3. Buttons with long text should not explode outside their containers.
-    4. Setting style specifically because user agent style sheets override
+    4. Buttons with long text should not explode outside their containers.
+    5. Setting style specifically because user agent style sheets override
         the value that should cascade.
-    5. Use the button-size mixin to keep implementation consistent between
+    6. Use the button-size mixin to keep implementation consistent between
         the button sizes and the default button.
+    7. No matter the size all buttons should have the same outer margin.
+    8. Keep the active button styles and the active button states in sync.
 
 \* ------------------------------------------------------------------------- */
 .button {
   display: inline-block;
   text-align: center;
+  text-decoration: none;
+  /* [1] */
   vertical-align: middle;
   background-image: none;
-  /* [1] */
-  border: 3px solid transparent;
   /* [2] */
+  border: 1px solid #333333;
+  /* [3] */
   border-radius: 3px;
   touch-action: manipulation;
   cursor: pointer;
   white-space: normal;
-  /* [3] */
-  font-size: 1rem;
   /* [4] */
-  padding: 0.5rem 1rem;
-  margin: 0.25rem 0.5rem;
+  font-size: 1rem;
   /* [5] */
+  padding: 0.75rem 1.25rem;
+  /* [6] */
+  margin: 0.375rem 0.75rem;
+  /* [7] */
 }
 .button:active,
 .button:focus {
@@ -893,6 +943,8 @@ html {
   /* [1] */
   outline-offset: -2px;
   /* [1] */
+  border-color: transparent;
+  /* [8] */
 }
 .button:hover,
 .button:focus {
@@ -911,7 +963,48 @@ html {
     Example usage:
         <a class="button button--primary">Primary Link</a>
 
+    1. This color is tightly coupled to the color actually used
+        inside the .background-color--inverse class.
+
 \* ------------------------------------------------------------------------- */
+.button--default {
+  background-color: #ffffff;
+}
+.button--default:hover,
+.button--default:focus {
+  background-color: #f2f2f2;
+}
+.button--primary:hover,
+.button--primary:focus {
+  background-color: #5aa03e;
+}
+.button--secondary:hover,
+.button--secondary:focus {
+  background-color: #0086b3;
+}
+.button--inverse {
+  /* [1] */
+}
+.button--inverse:hover,
+.button--inverse:focus {
+  background-color: #262626;
+}
+.button--success:hover,
+.button--success:focus {
+  background-color: #5aa03e;
+}
+.button--info:hover,
+.button--info:focus {
+  background-color: #148bc2;
+}
+.button--warning:hover,
+.button--warning:focus {
+  background-color: #f49905;
+}
+.button--critical:hover,
+.button--critical:focus {
+  background-color: #e15d5d;
+}
 /* ------------------------------------------------------------------------- *\
     #ButtonSizes
 
@@ -927,22 +1020,23 @@ html {
 
 \* ------------------------------------------------------------------------- */
 .button--large {
-  padding: 1rem 2rem;
-  margin: 0.5rem 1rem;
+  padding: 1.25rem 2.5rem;
 }
 .button--small {
-  padding: 0.25rem 0.5rem;
-  margin: 0.125rem 0.25rem;
+  padding: 0.375rem 0.75rem;
 }
 .button--extra-small {
-  padding: 0.125rem 0.25rem;
-  margin: 0.0625rem 0.125rem;
+  padding: 0.375rem 0.375rem;
 }
 /* ------------------------------------------------------------------------- *\
     #ButtonStates
 
     These styles handle manually setting button states. If a button should
     appear to be active then use the .button--active class.
+
+    1. Deactivated button should not indicate focus.
+    2. Deactivated button should not remove border, this value is dependent
+        on the original border color in .button
 
 \* ------------------------------------------------------------------------- */
 .button--active {
@@ -951,11 +1045,202 @@ html {
   /* [1] */
   outline-offset: -2px;
   /* [1] */
+  border-color: transparent;
 }
 .button--disabled {
   cursor: not-allowed;
-  opacity: .7;
+  opacity: 0.7;
   box-shadow: none;
+}
+.button--disabled:active,
+.button--disabled:focus {
+  outline: none;
+  /* [1] */
+  box-shadow: none;
+  /* [1] */
+  border-color: #333333;
+  /* [2] */
+}
+/* ------------------------------------------------------------------------- *\
+    Button Groups
+
+    This file contains all styles for grouping buttons together. There
+    should be no visual styles applied within this file. Only the structure
+    of the buttons should be modified when within a group. This means
+    all buttons must use the `.button` class to get the correct overrides.
+
+    1. BaseButtonGroups      ... shared styles for all groups
+    2. ButtonGroupHorizontal ... styles for horizontal button groups
+
+    Example usage:
+
+        <div class="button-group button-group--horizontal">
+            <button class="button button--primary">Update Profile</button>
+            <a class="button button--secondary button--large">Click</a>
+        </div>
+
+    Note: a large amount of the styles within this file are take from
+        bootstrap's button groups.
+        https://github.com/twbs/bootstrap/blob/v3.3.5/less/button-groups.less
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    Mixins for clearing out floats.
+
+    1. ClearFloats ... use to clear out floated content
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    #ClearFloats
+
+    This mixin should be used on elements that contain floated elements to
+    ensure that the document flow is restored.
+
+    1. Ensures the content clears out...
+    2. ...all the floats
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    Styles specific to supporting right to left and right to left
+    interchangeably.
+
+    1. RTLFloats ... Styles for floating rtl and ltr
+    2. RTLRadius ... Control border radius direction
+    3. RTLBorder ... Control border properties
+
+    NOTE: When using the mixins the styles need to be applied
+    to the block calling it, not within the block. So they almost all
+    are declared with the `&` after the selector to "pull" the style
+    out. See this LESS doc:
+    http://lesscss.org/features/#extend-feature-extending-nested-selectors
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    #RTLFloats
+
+    Styles for handling floating left or right depending on [dir] attribute
+    in the html.
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    #RTLRadius
+
+    Handle the creation of border radius given the direction the border
+    radius should start. This means these border radius mixins should be
+    used in conjunction.
+
+    Example Usage:
+
+        .button-group--horizontal {
+            .button {
+                border-radius: 0;
+            }
+
+            .button:first-child {
+                .border-radius-left-mixin(@border-radius);
+            }
+
+            .button:last-child {
+                .border-radius-right-mixin(@border-radius);
+            }
+        }
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    #RTLBorder
+
+    Handle the creation of borders given the direction the border
+    should start. This means these border-*-mixins should be
+    used in conjunction.
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    #BaseButtonGroups
+
+    Default styles for all button groups. This should control the general
+    structure of button groups.
+
+\* ------------------------------------------------------------------------- */
+.button-group .button {
+  border-radius: 0;
+}
+/* ------------------------------------------------------------------------- *\
+    #ButtonGroupHorizontal
+
+    Default styles for horizontal button groups.
+
+    1. By using the .clear-floats-mixin the button-group will always have a
+        height and ensure content does not flow backwards into the group.
+    2. Remove any margin that has been applied so buttons
+    3. By default button groups should float to the left within their
+        container. This means if you want align buttons the
+        container will need to be specially aligned.
+
+\* ------------------------------------------------------------------------- */
+.button-group--horizontal {
+  /* [1] */
+}
+.button-group--horizontal:before,
+.button-group--horizontal:after {
+  content: " ";
+  display: table;
+  /* [1] */
+}
+.button-group--horizontal:after {
+  clear: both;
+  /* [2] */
+}
+.button-group--horizontal .button {
+  margin-right: 0;
+  /* [2] */
+  margin-left: 0;
+  /* [2] */
+  border-left-color: transparent;
+  /* [3] */
+}
+[dir="rtl"] .button-group--horizontal .button {
+  float: right;
+}
+[dir="ltr"] .button-group--horizontal .button {
+  float: left;
+}
+.button-group--horizontal button:active + button,
+.button-group--horizontal button:focus + button {
+  border-left-color: #333333;
+}
+[dir="ltr"] .button-group--horizontal .button:first-child {
+  border-left-width: 1px;
+  border-left-color: #333333;
+}
+[dir="rtl"] .button-group--horizontal .button:first-child {
+  border-right-width: 1px;
+  border-right-color: #333333;
+}
+[dir="ltr"] .button-group--horizontal .button:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+[dir="rtl"] .button-group--horizontal .button:first-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.button-group--horizontal .button:last-child {
+  border-right-width: 1px;
+}
+[dir="ltr"] .button-group--horizontal .button:last-child {
+  border-right-width: 1px;
+  border-right-color: #333333;
+}
+[dir="rtl"] .button-group--horizontal .button:last-child {
+  border-left-width: 1px;
+  border-left-color: #333333;
+}
+[dir="ltr"] .button-group--horizontal .button:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+[dir="rtl"] .button-group--horizontal .button:last-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 /* ------------------------------------------------------------------------- *\
     #SiteContainer

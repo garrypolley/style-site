@@ -602,7 +602,9 @@
             site.
     3. Prevent iOS and IE text size adjust after device orientation change,
         without disabling user zoom. See normalize.css
-    4. Whenever the site is viewed on anything smaller than a medium sized
+    4. In order to avoid overflowing containers _all_ text should break
+        if it must to stay within its container.
+    5. Whenever the site is viewed on anything smaller than a medium sized
         screen we should increase the base font size and decrease the
         header sizes. This allows for a better viewing and reading
         experience for users.
@@ -618,9 +620,11 @@ html {
   /* [3] */
   -ms-text-size-adjust: 100%;
   /* [3] */
+  word-wrap: break-word;
+  /* [4] */
 }
 @media only screen and (max-width: 992px) {
-  /* [4] */
+  /* [5] */
   html {
     font-size: 1.1rem;
     line-height: 1.6rem;
@@ -740,35 +744,49 @@ html {
 .text-color--border {
   color: #eeeeee;
 }
-.text-color--inverse {
+.text-color--inverse,
+.button--primary,
+.button--secondary,
+.button--inverse,
+.button--success,
+.button--info,
+.button--warning,
+.button--critical {
   color: #ffffff;
 }
 .background-color,
 html {
   background-color: #f2f2f2;
 }
-.background-color--success {
+.background-color--success,
+.button--success {
   background-color: #64b245;
 }
-.background-color--warning {
+.background-color--warning,
+.button--warning {
   background-color: #faa419;
 }
-.background-color--info {
+.background-color--info,
+.button--info {
   background-color: #169cd9;
 }
-.background-color--critical {
+.background-color--critical,
+.button--critical {
   background-color: #e57373;
 }
-.background-color--primary {
+.background-color--primary,
+.button--primary {
   background-color: #64b245;
 }
-.background-color--secondary {
+.background-color--secondary,
+.button--secondary {
   background-color: #0099cc;
 }
 .background-color--border {
   background-color: #eeeeee;
 }
-.background-color--inverse {
+.background-color--inverse,
+.button--inverse {
   background-color: #333333;
 }
 /* ------------------------------------------------------------------------- *\
@@ -783,6 +801,162 @@ html {
         on pages with text.
 
 \* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    Button styles
+
+    1. BaseButton    ... Structural styles for all buttons
+    2. ButtonStyles  ... Visual styles for all buttons
+    3. ButtonSizes   ... Different sizings for buttons
+    4. ButtonStates  ... Styles for button states, e.g. active
+
+    Buttons are expected to be used using the base style `.button` along
+    with a modifier to give visual styling to the buttons.
+
+    Example usage:
+
+        <button class="button button--primary">Update Profile</button>
+        <a class="button button--secondary button--large">Click</a>
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    TabFocus, these styles should be used when something is given focus.
+    For example if it is active or the focused element.
+
+    1. TabFocus ... Provides the default styles for items getting focus.
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    #TabFocus
+
+    Provides the default styles for items getting focus.
+    Code used from bootstrap:
+    https://github.com/twbs/bootstrap/blob/v3.3.5/less/mixins/tab-focus.less
+
+    1. These styles are used to enhance webkit browsers.
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    Measurements to be reused by components.
+
+    1. Border ... Contains measurements for borders
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    #Border
+
+    These values should be used for the widths and rounding of borders.
+    Any values needed for border "wideness" should be placed in this section.
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    #BaseButton
+
+    Styles found here are for defining the standard button layouts.
+    These base styles have been largely copied/modified from bootstrap:
+    https://github.com/twbs/bootstrap/blob/v3.3.5/less/mixins/buttons.less
+    https://github.com/twbs/bootstrap/blob/v3.3.5/less/buttons.less
+
+    1. Reset unusual Firefox-on-Android default style; see
+        https://github.com/necolas/normalize.css/issues/214
+    2. By default do not show a border, allow specific button types to
+        override
+    3. Buttons with long text should not explode outside their containers.
+    4. Setting style specifically because user agent style sheets override
+        the value that should cascade.
+    5. Use the button-size mixin to keep implementation consistent between
+        the button sizes and the default button.
+
+\* ------------------------------------------------------------------------- */
+.button {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  background-image: none;
+  /* [1] */
+  border: 3px solid transparent;
+  /* [2] */
+  border-radius: 3px;
+  touch-action: manipulation;
+  cursor: pointer;
+  white-space: normal;
+  /* [3] */
+  font-size: 1rem;
+  /* [4] */
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0.5rem;
+  /* [5] */
+}
+.button:active,
+.button:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  /* [1] */
+  outline-offset: -2px;
+  /* [1] */
+}
+.button:hover,
+.button:focus {
+  text-decoration: none;
+}
+.button:active {
+  outline: 0;
+  background-image: none;
+  box-shadow: inset 0 0.25rem 0.3rem rgba(0, 0, 0, 0.125);
+}
+/* ------------------------------------------------------------------------- *\
+    #ButtonStyles
+
+    These classes are used to give buttons their specific look.
+
+    Example usage:
+        <a class="button button--primary">Primary Link</a>
+
+\* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *\
+    #ButtonSizes
+
+    These classes are used to increase the size of a button.
+
+    Example usage:
+        <a class="button button--primary button--large">Primary Link</a>
+
+    The scale of the buttons is to half in size from the large button
+    all the way down to the extra small button. This keeps the buttons
+    looking good near each other and sizing different enough to have actual
+    use cases for different button sizes.
+
+\* ------------------------------------------------------------------------- */
+.button--large {
+  padding: 1rem 2rem;
+  margin: 0.5rem 1rem;
+}
+.button--small {
+  padding: 0.25rem 0.5rem;
+  margin: 0.125rem 0.25rem;
+}
+.button--extra-small {
+  padding: 0.125rem 0.25rem;
+  margin: 0.0625rem 0.125rem;
+}
+/* ------------------------------------------------------------------------- *\
+    #ButtonStates
+
+    These styles handle manually setting button states. If a button should
+    appear to be active then use the .button--active class.
+
+\* ------------------------------------------------------------------------- */
+.button--active {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  /* [1] */
+  outline-offset: -2px;
+  /* [1] */
+}
+.button--disabled {
+  cursor: not-allowed;
+  opacity: .7;
+  box-shadow: none;
+}
 /* ------------------------------------------------------------------------- *\
     #SiteContainer
 

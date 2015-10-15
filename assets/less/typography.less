@@ -99,7 +99,9 @@
             site.
     3. Prevent iOS and IE text size adjust after device orientation change,
         without disabling user zoom. See normalize.css
-    4. Whenever the site is viewed on anything smaller than a medium sized
+    4. In order to avoid overflowing containers _all_ text should break
+        if it must to stay within its container.
+    5. Whenever the site is viewed on anything smaller than a medium sized
         screen we should increase the base font size and decrease the
         header sizes. This allows for a better viewing and reading
         experience for users.
@@ -111,10 +113,10 @@ html {
     line-height: 1.45rem; /* [2] */
     -webkit-text-size-adjust: 100%; /* [3] */
         -ms-text-size-adjust: 100%; /* [3] */
-
+    word-wrap: break-word; /* [4] */
 }
 
-@media only screen and (max-width: @screen-md-min) { /* [4] */
+@media only screen and (max-width: @screen-md-min) { /* [5] */
     html {
         font-size: 1.1rem;
         line-height: 1.6rem;

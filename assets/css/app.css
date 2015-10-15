@@ -1173,7 +1173,8 @@ html {
     2. Remove any margin that has been applied so buttons
     3. By default button groups should float to the left within their
         container. This means if you want align buttons the
-        container will need to be specially aligned.
+        container will need to be specially aligned
+    4. Prevents button group jitter when button is active
 
 \* ------------------------------------------------------------------------- */
 .button-group--horizontal {
@@ -1194,8 +1195,15 @@ html {
   /* [2] */
   margin-left: 0;
   /* [2] */
-  border-left-color: transparent;
   /* [3] */
+}
+[dir="ltr"] .button-group--horizontal .button {
+  border-left-width: 1px;
+  border-left-color: transparent;
+}
+[dir="rtl"] .button-group--horizontal .button {
+  border-right-width: 1px;
+  border-right-color: transparent;
 }
 [dir="rtl"] .button-group--horizontal .button {
   float: right;
@@ -1205,7 +1213,17 @@ html {
 }
 .button-group--horizontal button:active + button,
 .button-group--horizontal button:focus + button {
+  /* [4] */
+}
+[dir="ltr"] .button-group--horizontal button:active + button,
+[dir="ltr"] .button-group--horizontal button:focus + button {
+  border-left-width: 1px;
   border-left-color: #333333;
+}
+[dir="rtl"] .button-group--horizontal button:active + button,
+[dir="rtl"] .button-group--horizontal button:focus + button {
+  border-right-width: 1px;
+  border-right-color: #333333;
 }
 [dir="ltr"] .button-group--horizontal .button:first-child {
   border-left-width: 1px;

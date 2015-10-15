@@ -1211,17 +1211,17 @@ html {
 [dir="ltr"] .button-group--horizontal .button {
   float: left;
 }
-.button-group--horizontal button:active + button,
-.button-group--horizontal button:focus + button {
+.button-group--horizontal .button:active + .button,
+.button-group--horizontal .button:focus + .button {
   /* [4] */
 }
-[dir="ltr"] .button-group--horizontal button:active + button,
-[dir="ltr"] .button-group--horizontal button:focus + button {
+[dir="ltr"] .button-group--horizontal .button:active + .button,
+[dir="ltr"] .button-group--horizontal .button:focus + .button {
   border-left-width: 1px;
   border-left-color: #333333;
 }
-[dir="rtl"] .button-group--horizontal button:active + button,
-[dir="rtl"] .button-group--horizontal button:focus + button {
+[dir="rtl"] .button-group--horizontal .button:active + .button,
+[dir="rtl"] .button-group--horizontal .button:focus + .button {
   border-right-width: 1px;
   border-right-color: #333333;
 }

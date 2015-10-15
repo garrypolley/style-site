@@ -67,10 +67,10 @@
         .float-left-mixin(); /* [3] */
     }
 
-    button {
+    .button {
         &:active,
         &:focus {
-            + button { /* [4] */
+            + .button { /* [4] */
                 .border-left-mixin(@border-width--extra-small, @color-black)
             }
         }
